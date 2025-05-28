@@ -243,8 +243,8 @@ footer {
 }
 
 /* ===== 日報入力画面用スタイル追加 ===== */
-form {
-  max-width: 800px;
+.form {
+  /* max-width: 800px; */
   margin: 0 auto;
   background-color: #fff;
   padding: 2rem;
@@ -338,6 +338,21 @@ form > label, form > textarea {
 } */
 
 /* ===== 日報一覧画面用スタイル追加 ===== */
+.container_report_list {
+  width: 90%;          /* または max-width: 1200px; など適宜 */
+  max-width: 100%;     /* 画面幅を超えない */
+  margin: 0 auto;      /* 中央寄せ */
+  padding: 1rem;       /* 内側余白 */
+  box-sizing: border-box;  /* パディング込みで幅を計算 */
+  overflow-x: auto;    /* はみ出す場合は横スクロール */
+  background-color: #fff; /* ボックスの背景色（例） */
+  border: 1px solid #ccc; /* ボックスの枠線（例） */
+  border-radius: 5px;  /* 角丸（例） */
+  text-align:center;
+}
+
+
+
 /* 表内の複数行改行対応 */
 .multiline {
     white-space: pre-line;
@@ -363,17 +378,35 @@ form > label, form > textarea {
     background-color: white;
 } */
 
-.report-table {
-  table-layout: fixed;
-  width: 100%;
-}
+/* .report-table { */
+  /* table-layout: fixed;  固定テーブルレイアウト */
+  /* min-width: 960px;     列幅合計と合わせる */
+  /* width: 100%;          親幅いっぱい */
+/* } */
 
-.report-table th,
+/* .report-table th,
 .report-table td {
     border: 1px solid #ccc;
     padding: 10px;
     vertical-align: top;
+} */
+
+.report-table {
+  table-layout: fixed;
+  width: 100%;          /* 親幅いっぱいに広げる */
+  max-width: 100%;      /* 親幅を超えない */
+  overflow-x: auto;     /* はみ出る場合は横スクロール */
+  border-collapse: collapse;
 }
+
+.report-table th,
+.report-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  vertical-align: top;
+  word-wrap: break-word; /* 長い単語の折返し */
+}
+
 
 /* コメント入力欄 */
 /* .report-table textarea {

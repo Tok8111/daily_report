@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
+    <div class="container_report_list">
         <h1>{{ name }}さん</h1>
         <h2>{{ display_month }} の業務日報一覧</h2>
 
@@ -46,18 +46,6 @@
             <input type="hidden" name="month" value="{{ month }}">
 
             <table class="report-table">
-                <!-- <thead>
-                    <tr>
-                        <th>日付</th>
-                        <th>出勤</th>
-                        <th>退勤</th>
-                        <th>体調</th>
-                        <th>作業時間</th>
-                        <th>作業内容</th>
-                        <th>利用者コメント</th>
-                        <th>職員コメント</th>
-                    </tr>
-                </thead> -->
 
                 <thead>
                     <tr>
