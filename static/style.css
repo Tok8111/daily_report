@@ -163,6 +163,7 @@ footer {
   display: flex;
   flex-direction: column;
   margin-bottom: 0.5rem;
+  margin: 0 auto;
 }
 
 .login-form label {
@@ -351,8 +352,6 @@ form > label, form > textarea {
   text-align:center;
 }
 
-
-
 /* 表内の複数行改行対応 */
 .multiline {
     white-space: pre-line;
@@ -406,7 +405,6 @@ form > label, form > textarea {
   vertical-align: top;
   word-wrap: break-word; /* 長い単語の折返し */
 }
-
 
 /* コメント入力欄 */
 /* .report-table textarea {
