@@ -19,6 +19,7 @@ h1, h2, h3, h4 {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align:center;
 }
 
 /* ===== フォーム ===== */
@@ -344,12 +345,14 @@ form > label, form > textarea {
 
 /* ナビゲーションボタンの整列 */
 .nav-buttons {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
-
 .nav-buttons form {
     display: inline-block;
-    margin-right: 10px;
+    margin: 0;
 }
 
 /* 日報テーブル */
@@ -379,7 +382,11 @@ form > label, form > textarea {
 
 /* 保存ボタン調整 */
 .save-button {
-    margin-top: 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
 }
 
 /* ===== レスポンシブ対応 ===== */

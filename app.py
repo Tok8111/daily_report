@@ -1,12 +1,8 @@
 import sqlite3
 import calendar
 import os
-import logging
 from flask import Flask, render_template, request, redirect, url_for, session, g, flash
 from datetime import datetime, timedelta
-
-logging.basicConfig(level=logging.DEBUG)  # ログレベルをDEBUGに設定
-logger = logging.getLogger(__name__)      # ロガーを取得
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -172,12 +168,18 @@ def daily_report_input():
         start_time = request.form.get('start_time')
         end_time = request.form.get('end_time')
 
-        # 🔹 先に各リスト形式の値を取得
+        # 先に各リスト形式の値を取得
         task_name = request.form.getlist('work_detail[]')
         task_duration = request.form.getlist('work_time[]')
         task_note = request.form.getlist('user_comment[]')
 
-        # 🔹 代表値を使って reports テーブル用の項目を生成
+        # コメント文字数バリデーション（各コメントが300文字以内か確認）
+        for note in task_note:
+            if len(note) > 300:
+                flash('利用者コメントは300文字以内で入力してください。')
+                return redirect(url_for('daily_report_input', date=report_date))
+
+        # 代表値を使って reports テーブル用の項目を生成
         work_time = task_duration[0].strip() if task_duration and task_duration[0].strip() != "" else "0"
         work_detail = task_name[0].strip() if task_name and task_name[0].strip() != "" else "(未記入)"
 
@@ -203,7 +205,7 @@ def daily_report_input():
             ''', (user_id, report_date, condition, start_time, end_time, work_time, work_detail, created_at))
             report_id = cursor.lastrowid
 
-        # 🔹 各タスクを report_tasks に登録
+        # 各タスクを report_tasks に登録
         for index, (name, duration, note) in enumerate(zip(task_name, task_duration, task_note), start=1):
             if name.strip() == "":
                 continue

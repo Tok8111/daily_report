@@ -71,7 +71,7 @@
 </head>
 
 <body>
-    <h2 class="center-heading">{{ name }}さん</h2>
+    <h1 class="center-heading">{{ name }}さん</h1>
     <h2 class="center-heading">{{ report_date }}の日報入力</h2>
 
     {% with messages = get_flashed_messages() %}
@@ -129,13 +129,13 @@
                         <label>
                             作業時間
                             <span class="text-sm text-gray-500">
-                                <input type="number" name="work_time[]" step="0.25" min="0" value="{{ task.task_duration }}" required>(時間:0.25単位)
+                                <input type="number" name="work_time[]" step="0.25" min="0" value="{{ task.task_duration }}" required>時間(0.25単位で入力)
                             </span>
                         </label>
 
                         <hr>
 
-                        <label>利用者によるコメント:</label>
+                        <label>利用者によるコメント(300文字以内)</label>
                         <textarea name="user_comment[]" maxlength="300">{{ task.task_note }}</textarea>
 
                         <button type="button" class="delete-btn" onclick="deleteTask(this)">削除</button>
@@ -153,13 +153,13 @@
                     <label>
                         作業時間
                         <span class="text-sm text-gray-500">
-                            <input type="number" name="work_time[]" step="0.25" min="0" required>(時間:0.25単位)
+                            <input type="number" name="work_time[]" step="0.25" min="0" required>時間(0.25単位で入力)
                         </span>
                     </label>
 
                     <hr>
 
-                    <label>利用者によるコメント:</label>
+                    <label>利用者によるコメント(300文字以内)</label>
                     <textarea name="user_comment[]" maxlength="300"></textarea>
 
                     <button type="button" class="delete-btn" style="display:none;" onclick="deleteTask(this)">削除</button>
@@ -194,13 +194,13 @@
             <label>
                 作業時間
                 <span class="text-sm text-gray-500">
-                    <input type="number" name="work_time[]" step="0.25" min="0" required>(時間:0.25単位)
+                    <input type="number" name="work_time[]" step="0.25" min="0" required>時間(0.25単位で入力)
                 </span>
             </label>
 
             <hr>
 
-            <label>利用者によるコメント:</label>
+            <label>利用者によるコメント(300文字以内)</label>
             <textarea name="user_comment[]" maxlength="300"></textarea>
 
             <button type="button" class="delete-btn" onclick="deleteTask(this)">削除</button>
