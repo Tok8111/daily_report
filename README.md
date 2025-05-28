@@ -25,19 +25,43 @@
 
 ## 🛠 使用技術
 
-| 項目 | 使用予定技術 |
+| 項目 | 使用技術 |
 |-|-|
 | フロントエンド | HTML / CSS / JavaScript |
 | バックエンド | Python (Flask) |
 | データベース | SQLite |
 | 開発環境 | VSCode (ローカル開発) |
-| その他 | Git、レスポンシブ対応設計 |
+| バージョン管理 | Git / GitHub |
+| その他 | Jinja2テンプレート、Flask-Session |
 
 ## 🚀 セットアップ方法（作成中）
 
 ```
+1. Pythonと必要なパッケージをインストール
+
+```bash
+pip install flask
+```
+
+2. データベースを初期化
+
+```bash
+python init_db.py
+```
+
+3. アプリを起動
+
+```bash
+python app.py
+```
+
+4. ブラウザで以下にアクセス
 
 ```
+http://127.0.0.1:5000/
+```
+
+※ ユーザーアカウント情報は `init_db.py` にて仮登録済
 
 ## 📂 ディレクトリ構成
 
@@ -72,7 +96,7 @@ production_training/
 └── README.md                      プロジェクトの説明
 ```
 
-## 🗓 開発スケジュール（抜粋）
+## 🗓 開発スケジュール
 
 | 日付(目安) | 作業内容 |
 |-|-|
@@ -87,11 +111,14 @@ production_training/
 | 9日目（2025年5月28日） | （バッファ） |
 
 ## 📄 詳細資料
-- 要件定義書：document/requirements/requirements.md を参照
+- 要件定義書：document/requirements/requirements.md
+- ER図：document/er_diagram/er_diagram.png
+- 画面遷移図：document/screen_transition_diagram/screen_transition.png
+- ワイヤーフレーム：document/wire_frame/
 
 ## 📝 ライセンス
 本プロジェクトは2025年1月～5月の職業訓練課程における教育・研修目的でのみ利用されます。
 商用利用・転載はご遠慮ください。
 
 ## 🙏 THANKS
-本アプリは「Java＋Pythonプログラマー養成科」制作実習の一環として作成されました。
+本アプリは「Java＋Pythonプログラマー養成科(2025年1月開講)」制作実習の一環として作成されました。
