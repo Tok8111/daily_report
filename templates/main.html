@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>メイン画面</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="app-title">業務日報アプリ</h1>
+        <h2 class="title">{{ name }}さん、こんにちは。</h2>
+
+        {% if role == 'user' %}
+            <h3 class="subtitle">業務日報入力</h3>
+            <p class="description">日報を入力するには、カレンダーの日付をクリックしてください。</p>
+
+            <div class="calendar-nav">
+                <a href="{{ url_for('main') }}?year={{ prev_year }}&month={{ prev_month }}" class="calendar-arrow">&#8592;</a>
+                <h3>{{ year }}年 {{ month }}月</h3>
+                <a href="{{ url_for('main') }}?year={{ next_year }}&month={{ next_month }}" class="calendar-arrow">&#8594;</a>
+            </div>
+
+            <table class="calendar-table">
+                <thead>
+                    <tr>
+                        <th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for week in calendar %}
+                    <tr>
+                        {% for day in week %}
+                        <td>
+                            {% if day != 0 %}
+                                <a href="{{ url_for('daily_report_input') }}?date={{ year }}-{{ '%02d' % month }}-{{ '%02d' % day }}">{{ day }}</a>
+                            {% else %}
+                                &nbsp;
+                            {% endif %}
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% elif role == 'staff' %}
+            <h3 class="subtitle">利用者一覧</h3>
+            <p class="description">利用者の名前をクリックすると、その利用者の日報一覧が表示されます。</p>
+
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>名前</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td><a href="{{ url_for('report_list') }}?user_id={{ user.id }}">{{ user.name }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+            <p class="error">権限情報が見つかりません。</p>
+        {% endif %}
+
+        <form action="{{ url_for('logout') }}">
+            <button class="nav-button">ログアウト</button>
+        </form>
+    </div>
+</body>
+</html>

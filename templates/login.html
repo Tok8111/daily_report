@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="app-title">業務日報アプリ</h1>
+        <h2 class="title">ログイン</h2>
+
+        {% if error %}
+            <div class="message error">{{ error }}</div>
+        {% endif %}
+
+        <form method="post" action="{{ url_for('login') }}" class="form-box">
+            <label for="username">ユーザーID：</label>
+            <input type="text" name="username" id="username" required>
+
+            <label for="password">パスワード：</label>
+            <input type="password" name="password" id="password" required>
+
+            <button type="submit" class="btn-primary">ログイン</button>
+        </form>
+    </div>
+</body>
+
+</html>
