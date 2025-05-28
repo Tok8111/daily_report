@@ -34,30 +34,19 @@
 | バージョン管理 | Git / GitHub |
 | その他 | Jinja2テンプレート、Flask-Session |
 
-## 🚀 セットアップ方法（作成中）
+## 🚀 セットアップ方法
 
 ```
 1. Pythonと必要なパッケージをインストール
-
-```bash
 pip install flask
-```
 
 2. データベースを初期化
-
-```bash
 python init_db.py
-```
 
 3. アプリを起動
-
-```bash
 python app.py
-```
 
 4. ブラウザで以下にアクセス
-
-```
 http://127.0.0.1:5000/
 ```
 
