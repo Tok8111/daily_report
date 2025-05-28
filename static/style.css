@@ -356,11 +356,16 @@ form > label, form > textarea {
 }
 
 /* 日報テーブル */
-.report-table {
+/* .report-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
     background-color: white;
+} */
+
+.report-table {
+  table-layout: fixed;
+  width: 100%;
 }
 
 .report-table th,
@@ -371,14 +376,14 @@ form > label, form > textarea {
 }
 
 /* コメント入力欄 */
-.report-table textarea {
+/* .report-table textarea {
     width: 100%;
     padding: 8px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
-}
+} */
 
 /* 保存ボタン調整 */
 .save-button {
@@ -387,6 +392,42 @@ form > label, form > textarea {
     border: none;
     padding: 0.5rem 1rem;
     font-weight: bold;
+}
+
+/* コメント欄（職員コメント）サイズ調整 */
+.report-table textarea {
+  width: 100%;
+  min-height: 60px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* 保存ボタン中央寄せ */
+.report-actions {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* テーブル内の改行対応 */
+td.multiline {
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+/* ナビボタン配置改善 */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 /* ===== レスポンシブ対応 ===== */
