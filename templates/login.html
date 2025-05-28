@@ -15,15 +15,18 @@
             <div class="message error">{{ error }}</div>
         {% endif %}
 
-        <form method="post" action="{{ url_for('login') }}" class="form-box">
-            <label for="username">ユーザーID：</label>
-            <input type="text" name="username" id="username" required>
+        <form method="post" action="{{ url_for('login') }}" class="form-box login-form">
 
-            <label for="password">パスワード：</label>
-            <input type="password" name="password" id="password" required>
+            <div class="form-group">
+                <label for="username">ユーザーID</label>
+                <input type="text" name="username" id="username" required>
+                <label for="password">パスワード</label>
+                <input type="password" name="password" id="password" required>
+                <button type="submit" class="btn-primary">ログイン</button>
+            </div>
 
-            <button type="submit" class="btn-primary">ログイン</button>
         </form>
+
     </div>
 </body>
 

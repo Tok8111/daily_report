@@ -150,6 +150,26 @@ footer {
     background-color: #e65100;
 }
 
+/* ログインフォーム用の整列スタイル */
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.login-form label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  text-align: left;
+}
+
 /* カレンダーテーブル */
 .calendar-table {
     border-collapse: collapse;
