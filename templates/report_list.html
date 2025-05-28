@@ -71,7 +71,7 @@
                         <td class="multiline">{{ report['task_name'] | replace('\n', '<br>') | safe }}</td>
                         <td class="multiline">{{ report['task_note'] | replace('\n', '<br>') | safe }}</td>
                         <td>
-                            <textarea name="staff_comment_{{ report['report_id'] }}" rows="3">{{ report['staff_comment'] or '' }}</textarea>
+                            <textarea name="staff_comment_{{ report['report_id'] }}" maxlength="300">{{ report['staff_comment'] or '' }}</textarea>
                         </td>
                     </tr>
                     {% endfor %}

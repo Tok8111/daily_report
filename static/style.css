@@ -94,16 +94,19 @@ th {
   padding: 10px;
   margin-bottom: 1rem;
   border-radius: 5px;
+  text-align: center;
 }
 
 .message.success {
   background-color: #D4EDDA;
   color: #155724;
+  text-align: center;
 }
 
 .message.error {
   background-color: #F8D7DA;
   color: #721C24;
+  text-align: center;
 }
 
 /* ===== ヘッダー・ナビ ===== */
