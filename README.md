@@ -104,7 +104,7 @@ production_training/
 ## 📄 詳細資料
 - [要件定義書](document/requirements/requirements.md)
 - [ER図](document/er_diagram/er_diagram.png)
-- [画面遷移図](document/screen_transition_diagram/screen_transition.png)
+- [画面遷移図](document/screen_transition_diagram/screen_transition_diagram.png)
 - [プレゼン資料](document/presentation/業務日報作成アプリ.pdf)
 
 ## 📝 ライセンス
