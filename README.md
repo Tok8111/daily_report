@@ -101,10 +101,10 @@ production_training/
 | 9日目（2025年5月28日） | （バッファ） |
 
 ## 📄 詳細資料
-- 要件定義書：document/requirements/requirements.md
-- ER図：document/er_diagram/er_diagram.png
-- 画面遷移図：document/screen_transition_diagram/screen_transition.png
-- ワイヤーフレーム：document/wire_frame/
+- [要件定義書](document/requirements/requirements.md)
+- [ER図](document/er_diagram/er_diagram.png)
+- [画面遷移図](document/screen_transition_diagram/screen_transition.png)
+- [プレゼン資料](document/presentation/業務日報作成アプリ.pdf)
 
 ## 📝 ライセンス
 本プロジェクトは2025年1月～5月の職業訓練課程における教育・研修目的でのみ利用されます。
