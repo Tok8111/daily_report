@@ -82,6 +82,7 @@ production_training/
 │   ├── requirements               要求定義書
 │   ├── screen_transition_diagram  画面遷移図
 │   └── wire_frame                 ワイヤーフレーム
+│   └── presentation               プレゼン資料
 │
 └── README.md                      プロジェクトの説明
 ```
